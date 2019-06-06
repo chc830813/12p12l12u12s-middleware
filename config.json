@@ -1,0 +1,8 @@
+{
+    "PLUS_WS_master": "ws://13.124.230.82:38090",
+    "PLUS_URL_master": "http://13.209.69.153:38090/rpc",
+    "PLUS_WS": "ws://47.104.230.120:38090",
+    "PLUS_URL": "http://47.104.230.120:38090/rpc",
+    "privKey_master": "5JeWWZxQnqsG6saLvzuW712yfG4tCwPqaFmcotZnnUVuaSHfEQ6",
+    "privKey": "5JHGdT7fbNSQcNeoupe9wHZNCnUiuLWuWLqZxAxJXockCYMJwnG"
+}
