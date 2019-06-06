@@ -41,7 +41,7 @@
     ],
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/bitshares/bitsharesjs/issues"
+        "url": "https://github.com/chc830813/plus-middleware/issues"
     },
     "engines": {
         "node": ">= 6.0.0"
