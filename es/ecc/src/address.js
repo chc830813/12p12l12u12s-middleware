@@ -1,7 +1,7 @@
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 import assert from "assert";
-import { ChainConfig } from "bitsharesjs-ws";
+import {ChainConfig} from "pluschainjs-ws";
 import { sha256, sha512, ripemd160 } from "./hash";
 import { encode, decode } from "bs58";
 import deepEqual from "deep-equal";
