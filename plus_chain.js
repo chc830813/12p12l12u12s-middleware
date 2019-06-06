@@ -1,6 +1,6 @@
 'use strict';
 const conf = require('./config.json');
-import {Apis} from "bitsharesjs-ws";
+import {Apis} from "pluschainjs-ws";
 import {ChainStore, FetchChain, PrivateKey, TransactionHelper, Aes, TransactionBuilder} from "./lib";
 // p2p 的私钥
 var privKey = conf.privKey;
