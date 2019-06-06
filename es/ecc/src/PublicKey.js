@@ -5,7 +5,7 @@ import { Point, getCurveByName } from "ecurve";
 var secp256k1 = getCurveByName("secp256k1");
 import { encode, decode } from "bs58";
 import { sha256, sha512, ripemd160 } from "./hash";
-import { ChainConfig } from "bitsharesjs-ws";
+import {ChainConfig} from "pluschainjs-ws";
 import assert from "assert";
 import deepEqual from "deep-equal";
 var Buffer = require("safe-buffer").Buffer;
