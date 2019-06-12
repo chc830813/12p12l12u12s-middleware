@@ -255,8 +255,8 @@ synced and subscribed, chainstore ready
 1.3. 获取指定账户的某资产的到账信息 history<br>
  请求类型：GET<br>
  请求参数：{String} toAccount - 账号<br>
-         {Int}    size - 条数<br>
-         {String} symbol - 资产名<br>
+    >     {Int}    size - 条数<br>
+    >    {String} symbol - 资产名<br>
  请求示例：http://127.0.0.1:3002/plushapi/v2/history?toAccount=init2&size=1&symbol=CHK<br> 
  
  返回结果：
@@ -323,13 +323,54 @@ synced and subscribed, chainstore ready
     "message": "操作成功"
 }
 ```
-
-
-
-
-
-
-
+1.4. 转账 transfer<br>
+ 请求类型：POST<br>
+ 请求参数：{String} fromAccount - 起始账户<br>
+    >     {String}    toAccount - 到达账户<br>
+    >    {Nmuber} sendAmount - 金额<br>
+        >    {String} symbol - 资产名<br>
+            >    {String} memo - 备注<br>
+                        >    {Int} nonce - 区别到账信息<br>
+ 请求示例：http://127.0.0.1:3002/plushapi/v2/transfer<br> 
+ 
+ 返回结果：
+```javaspcript
+{
+    "code": 0,
+    "data": {
+        "ref_block_num": 0,
+        "ref_block_prefix": 0,
+        "expiration": "1970-01-01T00:00:00",
+        "operations": [
+            [
+                0,
+                {
+                    "fee": {
+                        "amount": "54492187",
+                        "asset_id": "1.3.0"
+                    },
+                    "from": "1.2.20",
+                    "to": "1.2.8",
+                    "amount": {
+                        "amount": "20000",
+                        "asset_id": "1.3.1"
+                    },
+                    "memo": {
+                        "from": "PLUS86ZS7oh4h4Eca9UYdJiKMh4KpzyAJFAMd5pW1aympQ5HTAAGuA",
+                        "to": "PLUS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV",
+                        "nonce": "1234",
+                        "message": "2a42d4ccdcca16fdcbbbc7727548c626"
+                    },
+                    "extensions": []
+                }
+            ]
+        ],
+        "extensions": [],
+        "signatures": []
+    },
+    "message": "操作成功"
+}
+```
 
 
 
