@@ -52,7 +52,8 @@ synced and subscribed, chainstore ready
 
 localhost:3002/plushapi/v2/getAccountDetails?account=plus123456789123 <br> 
 
-返回结果：<br> 
+返回结果：
+```javaspcript
 {<br>
 >"code": 0, 
 >"data": { 
@@ -207,7 +208,8 @@ localhost:3002/plushapi/v2/getAccountDetails?account=plus123456789123 <br>
         ]<br>
     },<br>
     "message": "操作成功"<br>
-}<br>
+}
+```
 
 
 
