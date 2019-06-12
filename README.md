@@ -2,9 +2,9 @@
 
 使用Pluschain 中间件是平台接入最简单的方式。主要提供三方面的接口：查询，转账等，获得相应的 API，方便的与Pluschain链进行交互。
 
-Pluschain中间件是通过node 的API接口与Pluschain网络通讯，为平台服务商提供方便的访问链上数据的接口，保证传统业务代码能在只做尽量少的改动情况下，也能达到上链的要求。具体示意图如下：
+Pluschain中间件是通过node 的API接口与Pluschain网络通讯，为平台服务商提供方便的访问链上数据的接口，保证传统业务代码能在只做尽量少的改动情况下，也能达到上链的要求。具体如下：
 
-Security issues might be eligible for a bounty through the [HackTheDex](https://wallet.pltoken.io) program.
+[PLUS](https://wallet.pltoken.io) 
 
 部署:
 ===
@@ -13,13 +13,12 @@ clone 源码 git clone https://github.com/chc830813/plus-middleware.git
 安装中间件服务所需node库 进入 ~/plus-middleware/ 目录 npm install
 启动中间件服务 npm start
 
-
-
-部署启动
-======
-配置文件说明
+启动:
+===
+##配置文件说明
 配置文件的路径在代码路径下config.json 文件中，
 
+```javaspcript
 {
     // api服务器地址，测试网公共api地址如下，正式网部署请更改该地址
     "plus_ws": "ws://47.104.230.120:38090",
@@ -30,12 +29,12 @@ clone 源码 git clone https://github.com/chc830813/plus-middleware.git
     // 允许接入的IP列表，强制指定明确的来访IP地址，暂不支持"*" 或 "0.0.0.0"
     allow_ip: ["localhost", "127.0.0.1"]
 }
-需要注意的是：
+```
+##需要注意的是：
     在一般使用场景中，中间件值需要使用资金私钥，否则不要将资金私钥写进配置文件。
     中间件中使用了限制IP(allow_ip)来保证安全性，不过依然强烈建议内网部署，做好隔离，私钥的安全性较为重要。
     操作手续费以PLUS支付手续费
-
-启动正常看到如下信息：
+##启动正常看到如下信息：
 connected to: PLUS network
 synced and subscribed, chainstore ready
 启动监听端口 3002
@@ -62,73 +61,73 @@ localhost:3002/plushapi/v2/getAccountDetails?account=plus123456789123 <br>
 >>>>>>>>>>>>>>>>"plus123456789123",<br>
 >>>>>>>>>>>>>>>>{<br>
 >>>>>>>>>>>>>>>>>>>>"account": {<br>
->>>>>>>>>>>>>>>>>>>>"id": "1.2.20",<br>
->>>>>>>>>>>>>>>>>>>>"membership_expiration_date": "2106-02-07T06:28:15",<br>
->>>>>>>>>>>>>>>>>>>>"registrar": "1.2.20",<br>
->>>>>>>>>>>>>>>>>>>>"referrer": "1.2.20",<br>
->>>>>>>>>>>>>>>>>>>>"lifetime_referrer": "1.2.20",<br>
->>>>>>>>>>>>>>>>>>>>"network_fee_percentage": 2000,<br>
->>>>>>>>>>>>>>>>>>>>"lifetime_referrer_fee_percentage": 8000,<br>
->>>>>>>>>>>>>>>>>>>>"referrer_rewards_percentage": 0,<br>
->>>>>>>>>>>>>>>>>>>>"name": "plus123456789123",<br>
->>>>>>>>>>>>>>>>>>>>"vm_type": "",<br>
->>>>>>>>>>>>>>>>>>>>"vm_version": "",<br>
->>>>>>>>>>>>>>>>>>>>"code": "",<br>
->>>>>>>>>>>>>>>>>>>>"code_version": "",<br>
->>>>>>>>>>>>>>>>>>>>"abi": {<br>
->>>>>>>>>>>>>>>>>>>>"version": "token::abi/1.0",<br>
-                            "types": [],<br>
-                            "structs": [],<br>
-                            "actions": [],<br>
-                            "tables": [],<br>
-                            "error_messages": [],<br>
-                            "abi_extensions": []<br>
-                        },<br>
-                        "owner": {<br>
-                            "weight_threshold": 1,<br>
-                            "account_auths": [],<br>
-                            "key_auths": [<br>
-                                [<br>
-                                    "PLUS7rfpjAKubCt6WGG3BpkBYbjt1yjCjpZvE8RG7ZHi13gie44yTM",<br>
-                                    1<br>
-                                ]<br>
-                            ],<br>
-                            "address_auths": []<br>
-                        },<br>
-                        "active": {<br>
-                            "weight_threshold": 1,<br>
-                            "account_auths": [],<br>
-                            "key_auths": [<br>
-                                [<br>
-                                    "PLUS86ZS7oh4h4Eca9UYdJiKMh4KpzyAJFAMd5pW1aympQ5HTAAGuA",<br>
-                                    1<br>
-                                ]<br>
-                            ],<br>
-                            "address_auths": []<br>
-                        },<br>
-                        "options": {<br>
-                            "memo_key": "PLUS86ZS7oh4h4Eca9UYdJiKMh4KpzyAJFAMd5pW1aympQ5HTAAGuA",<br>
-                            "voting_account": "1.2.5",<br>
-                            "num_witness": 0,<br>
-                            "num_committee": 0,<br>
-                            "votes": [],<br>
-                            "extensions": []<br>
-                        },<br>
-                        "statistics": "2.6.20",<br>
-                        "whitelisting_accounts": [],<br>
-                        "blacklisting_accounts": [],<br>
-                        "whitelisted_accounts": [],<br>
-                        "blacklisted_accounts": [],<br>
-                        "cashback_vb": "1.13.1",<br>
-                        "owner_special_authority": [<br>
-                            0,<br>
-                            {}<br>
-                        ],<br>
-                        "active_special_authority": [<br>
-                            0,<br>
-                            {}<br>
-                        ],<br>
-                        "top_n_control_flags": 0<br>
+>>>>>>>>>>>>>>>>>>>>>>>>"id": "1.2.20",<br>
+>>>>>>>>>>>>>>>>>>>>>>>>"membership_expiration_date": "2106-02-07T06:28:15",<br>
+>>>>>>>>>>>>>>>>>>>>>>>>"registrar": "1.2.20",<br>
+>>>>>>>>>>>>>>>>>>>>>>>>"referrer": "1.2.20",<br>
+>>>>>>>>>>>>>>>>>>>>>>>>"lifetime_referrer": "1.2.20",<br>
+>>>>>>>>>>>>>>>>>>>>>>>>"network_fee_percentage": 2000,<br>
+>>>>>>>>>>>>>>>>>>>>>>>>"lifetime_referrer_fee_percentage": 8000,<br>
+>>>>>>>>>>>>>>>>>>>>>>>>"referrer_rewards_percentage": 0,<br>
+>>>>>>>>>>>>>>>>>>>>>>>>"name": "plus123456789123",<br>
+>>>>>>>>>>>>>>>>>>>>>>>>"vm_type": "",<br>
+>>>>>>>>>>>>>>>>>>>>>>>>"vm_version": "",<br>
+>>>>>>>>>>>>>>>>>>>>>>>>"code": "",<br>
+>>>>>>>>>>>>>>>>>>>>>>>>"code_version": "",<br>
+>>>>>>>>>>>>>>>>>>>>>>>>"abi": {<br>
+>>>>>>>>>>>>>>>>>>>>>>>>"version": "token::abi/1.0",<br>
+>>>>>>>>>>>>>>>>>>>>>>>>"types": [],<br>
+>>>>>>>>>>>>>>>>>>>>>>>>"structs": [],<br>
+>>>>>>>>>>>>>>>>>>>>>>>>"actions": [],<br>
+>>>>>>>>>>>>>>>>>>>>>>>>"tables": [],<br>
+>>>>>>>>>>>>>>>>>>>>>>>>"error_messages": [],<br>
+>>>>>>>>>>>>>>>>>>>>>>>>"abi_extensions": []<br>
+>>>>>>>>>>>>>>>>>>>>},<br>
+>>>>>>>>>>>>>>>>>>>>"owner": {<br>
+>>>>>>>>>>>>>>>>>>>>>>>>"weight_threshold": 1,<br>
+>>>>>>>>>>>>>>>>>>>>>>>>"account_auths": [],<br>
+>>>>>>>>>>>>>>>>>>>>>>>>"key_auths": [<br>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>[<br>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"PLUS7rfpjAKubCt6WGG3BpkBYbjt1yjCjpZvE8RG7ZHi13gie44yTM",<br>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>1<br>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>]<br>
+>>>>>>>>>>>>>>>>>>>>>>>>],<br>
+>>>>>>>>>>>>>>>>>>>>"address_auths": []<br>
+>>>>>>>>>>>>>>>>},<br>
+>>>>>>>>>>>>>>>>"active": {<br>
+>>>>>>>>>>>>>>>>>>>>"weight_threshold": 1,<br>
+>>>>>>>>>>>>>>>>>>>>"account_auths": [],<br>
+>>>>>>>>>>>>>>>>>>>>"key_auths": [<br>
+>>>>>>>>>>>>>>>>>>>>>>>>[<br>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>"PLUS86ZS7oh4h4Eca9UYdJiKMh4KpzyAJFAMd5pW1aympQ5HTAAGuA",<br>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>1<br>
+>>>>>>>>>>>>>>>>>>>>>>>>]<br>
+>>>>>>>>>>>>>>>>>>>>],<br>
+>>>>>>>>>>>>>>>>>>>>"address_auths": []<br>
+>>>>>>>>>>>>>>>>},<br>
+>>>>>>>>>>>>>>>>"options": {<br>
+>>>>>>>>>>>>>>>>>>>>"memo_key": "PLUS86ZS7oh4h4Eca9UYdJiKMh4KpzyAJFAMd5pW1aympQ5HTAAGuA",<br>
+>>>>>>>>>>>>>>>>>>>>"voting_account": "1.2.5",<br>
+>>>>>>>>>>>>>>>>>>>>"num_witness": 0,<br>
+>>>>>>>>>>>>>>>>>>>>"num_committee": 0,<br>
+>>>>>>>>>>>>>>>>>>>>"votes": [],<br>
+>>>>>>>>>>>>>>>>>>>>"extensions": []<br>
+>>>>>>>>>>>>>>>>},<br>
+>>>>>>>>>>>>>>>>"statistics": "2.6.20",<br>
+>>>>>>>>>>>>>>>>"whitelisting_accounts": [],<br>
+>>>>>>>>>>>>>>>>"blacklisting_accounts": [],<br>
+>>>>>>>>>>>>>>>>"whitelisted_accounts": [],<br>
+>>>>>>>>>>>>>>>>"blacklisted_accounts": [],<br>
+>>>>>>>>>>>>>>>>"cashback_vb": "1.13.1",<br>
+>>>>>>>>>>>>>>>>"owner_special_authority": [<br>
+>>>>>>>>>>>>>>>>>>>>0,<br>
+>>>>>>>>>>>>>>>>>>>>{}<br>
+>>>>>>>>>>>>>>>>],<br>
+>>>>>>>>>>>>>>>>"active_special_authority": [<br>
+>>>>>>>>>>>>>>>>>>>>0,<br>
+>>>>>>>>>>>>>>>>>>>>{}<br>
+>>>>>>>>>>>>>>>>],<br>
+>>>>>>>>>>>>>>>>"top_n_control_flags": 0<br>
                     },<br>
                     "statistics": {<br>
                         "id": "2.6.20",<br>
