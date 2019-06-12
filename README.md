@@ -54,19 +54,19 @@ localhost:3002/plushapi/v2/getAccountDetails?account=plus123456789123 <br>
 
 返回结果：<br> 
 {<br>
->"code": 0,<br> 
->"data": {<br> 
->>>"data": [<br>
->>>>[<br>
->>>>>"plus123456789123",<br>
->>>>>>{<br>
->>>>>>>>>>>>>>>>>>>>"account": {<br>
->>>>>>>>>>>>>>>>>>>>>>>>"id": "1.2.20",<br>
->>>>>>>>>>>>>>>>>>>>>>>>"membership_expiration_date": "2106-02-07T06:28:15",<br>
->>>>>>>>>>>>>>>>>>>>>>>>"registrar": "1.2.20",<br>
->>>>>>>>>>>>>>>>>>>>>>>>"referrer": "1.2.20",<br>
->>>>>>>>>>>>>>>>>>>>>>>>"lifetime_referrer": "1.2.20",<br>
->>>>>>>>>>>>>>>>>>>>>>>>"network_fee_percentage": 2000,<br>
+>"code": 0, 
+>"data": { 
+>>>"data": [
+>>>>[
+>>>>>"plus123456789123",
+>>>>>>{
+>>>>>>>"account": {
+>>>>>>>"id": "1.2.20",
+>>>>>>>"membership_expiration_date": "2106-02-07T06:28:15",
+>>>>>>>"registrar": "1.2.20",
+>>>>>>>"referrer": "1.2.20",
+>>>>>>>"lifetime_referrer": "1.2.20",
+>>>>>>>"network_fee_percentage": 2000,
 >>>>>>>>>>>>>>>>>>>>>>>>"lifetime_referrer_fee_percentage": 8000,<br>
 >>>>>>>>>>>>>>>>>>>>>>>>"referrer_rewards_percentage": 0,<br>
 >>>>>>>>>>>>>>>>>>>>>>>>"name": "plus123456789123",<br>
