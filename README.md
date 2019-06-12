@@ -7,10 +7,225 @@ Pluschain中间件是通过node 的API接口与Pluschain网络通讯，为平台
 Security issues might be eligible for a bounty through the [HackTheDex](https://wallet.pltoken.io) program.
 
 部署:
+===
 clone 源码 git clone https://github.com/chc830813/plus-middleware.git
 修改中间件配置 参照配置文件说明()，修改文件plus-middleware/config.js
 安装中间件服务所需node库 进入 ~/plus-middleware/ 目录 npm install
 启动中间件服务 npm start
+
+
+
+部署启动
+======
+配置文件说明
+配置文件的路径在代码路径下config.json 文件中，
+
+{
+    // api服务器地址，测试网公共api地址如下，正式网部署请更改该地址
+    "plus_ws": "ws://47.104.230.120:38090",
+    // 服务rpc接口
+    "plus_rpc": "http://47.104.230.120:38090/rpc",
+    // 零钱用户的私钥 特别保密 重要
+    "privKey": "",
+    // 允许接入的IP列表，强制指定明确的来访IP地址，暂不支持"*" 或 "0.0.0.0"
+    allow_ip: ["localhost", "127.0.0.1"]
+}
+需要注意的是：
+    在一般使用场景中，中间件值需要使用资金私钥，否则不要将资金私钥写进配置文件。
+    中间件中使用了限制IP(allow_ip)来保证安全性，不过依然强烈建议内网部署，做好隔离，私钥的安全性较为重要。
+    操作手续费以PLUS支付手续费
+
+启动正常看到如下信息：
+connected to: PLUS network
+synced and subscribed, chainstore ready
+启动监听端口 3002
+
+接口说明
+请求文档及示例
+1. 基础查询相关接口
+1.1. 获取指定账户信息 getAccount
+ 请求类型：GET
+
+ 请求参数：
+
+{Number} uid - 账号id
+ 请求示例：
+
+localhost:3002/plushapi/v2/getAccountDetails?account=plus123456789123 <br> 
+
+返回结果：<br> 
+{<br>
+>>>>"code": 0,<br> 
+>>>>"data": {<br> 
+>>>>>>>>"data": [<br>
+>>>>>>>>>>>>[ <br>
+>>>>>>>>>>>>>>>>"plus123456789123",<br>
+>>>>>>>>>>>>>>>>{<br>
+>>>>>>>>>>>>>>>>>>>>"account": {<br>
+>>>>>>>>>>>>>>>>>>>>"id": "1.2.20",<br>
+>>>>>>>>>>>>>>>>>>>>"membership_expiration_date": "2106-02-07T06:28:15",<br>
+>>>>>>>>>>>>>>>>>>>>"registrar": "1.2.20",<br>
+>>>>>>>>>>>>>>>>>>>>"referrer": "1.2.20",<br>
+>>>>>>>>>>>>>>>>>>>>"lifetime_referrer": "1.2.20",<br>
+>>>>>>>>>>>>>>>>>>>>"network_fee_percentage": 2000,<br>
+>>>>>>>>>>>>>>>>>>>>"lifetime_referrer_fee_percentage": 8000,<br>
+>>>>>>>>>>>>>>>>>>>>"referrer_rewards_percentage": 0,<br>
+>>>>>>>>>>>>>>>>>>>>"name": "plus123456789123",<br>
+>>>>>>>>>>>>>>>>>>>>"vm_type": "",<br>
+>>>>>>>>>>>>>>>>>>>>"vm_version": "",<br>
+>>>>>>>>>>>>>>>>>>>>"code": "",<br>
+>>>>>>>>>>>>>>>>>>>>"code_version": "",<br>
+>>>>>>>>>>>>>>>>>>>>"abi": {<br>
+>>>>>>>>>>>>>>>>>>>>"version": "token::abi/1.0",<br>
+                            "types": [],<br>
+                            "structs": [],<br>
+                            "actions": [],<br>
+                            "tables": [],<br>
+                            "error_messages": [],<br>
+                            "abi_extensions": []<br>
+                        },<br>
+                        "owner": {<br>
+                            "weight_threshold": 1,<br>
+                            "account_auths": [],<br>
+                            "key_auths": [<br>
+                                [<br>
+                                    "PLUS7rfpjAKubCt6WGG3BpkBYbjt1yjCjpZvE8RG7ZHi13gie44yTM",<br>
+                                    1<br>
+                                ]<br>
+                            ],<br>
+                            "address_auths": []<br>
+                        },<br>
+                        "active": {<br>
+                            "weight_threshold": 1,<br>
+                            "account_auths": [],<br>
+                            "key_auths": [<br>
+                                [<br>
+                                    "PLUS86ZS7oh4h4Eca9UYdJiKMh4KpzyAJFAMd5pW1aympQ5HTAAGuA",<br>
+                                    1<br>
+                                ]<br>
+                            ],<br>
+                            "address_auths": []<br>
+                        },<br>
+                        "options": {<br>
+                            "memo_key": "PLUS86ZS7oh4h4Eca9UYdJiKMh4KpzyAJFAMd5pW1aympQ5HTAAGuA",<br>
+                            "voting_account": "1.2.5",<br>
+                            "num_witness": 0,<br>
+                            "num_committee": 0,<br>
+                            "votes": [],<br>
+                            "extensions": []<br>
+                        },<br>
+                        "statistics": "2.6.20",<br>
+                        "whitelisting_accounts": [],<br>
+                        "blacklisting_accounts": [],<br>
+                        "whitelisted_accounts": [],<br>
+                        "blacklisted_accounts": [],<br>
+                        "cashback_vb": "1.13.1",<br>
+                        "owner_special_authority": [<br>
+                            0,<br>
+                            {}<br>
+                        ],<br>
+                        "active_special_authority": [<br>
+                            0,<br>
+                            {}<br>
+                        ],<br>
+                        "top_n_control_flags": 0<br>
+                    },<br>
+                    "statistics": {<br>
+                        "id": "2.6.20",<br>
+                        "owner": "1.2.20",<br>
+                        "most_recent_op": "2.9.43",<br>
+                        "total_ops": 19,<br>
+                        "removed_ops": 0,<br>
+                        "total_core_in_orders": 0,<br>
+                        "lifetime_fees_paid": 1061505855,<br>
+                        "pending_fees": 0,<br>
+                        "pending_vested_fees": 0<br>
+                    },<br>
+                    "registrar_name": "plus123456789123",<br>
+                    "referrer_name": "plus123456789123",<br>
+                    "lifetime_referrer_name": "plus123456789123",<br>
+                    "votes": [],<br>
+                    "cashback_balance": {<br>
+                        "id": "1.13.1",<br>
+                        "owner": "1.2.20",<br>
+                        "balance": {<br>
+                            "amount": 565610938,<br>
+                            "asset_id": "1.3.0"<br>
+                        },<br>
+                        "policy": [<br>
+                            1,<br>
+                            {<br>
+                                "vesting_seconds": 1800,<br>
+                                "start_claim": "1970-01-01T00:00:00",<br>
+                                "coin_seconds_earned": "1018099688400",<br>
+                                "coin_seconds_earned_last_update": "2019-06-10T09:40:00"<br>
+                            }<br>
+                        ]<br>
+                    },<br>
+                    "balances": [<br>
+                        {<br>
+                            "id": "2.5.2",<br>
+                            "owner": "1.2.20",<br>
+                            "asset_type": "1.3.0",<br>
+                            "balance": "9998906494145"<br>
+                        },<br>
+                        {<br>
+                            "id": "2.5.3",<br>
+                            "owner": "1.2.20",<br>
+                            "asset_type": "1.3.1",<br>
+                            "balance": 9638192<br>
+                        }<br>
+                    ],<br>
+                    "vesting_balances": [<br>
+                        {<br>
+                            "id": "1.13.1",<br>
+                            "owner": "1.2.20",<br>
+                            "balance": {<br>
+                                "amount": 565610938,<br>
+                                "asset_id": "1.3.0"<br>
+                            },<br>
+                            "policy": [<br>
+                                1,<br>
+                                {<br>
+                                    "vesting_seconds": 1800,<br>
+                                    "start_claim": "1970-01-01T00:00:00",<br>
+                                    "coin_seconds_earned": "1018099688400",<br>
+                                    "coin_seconds_earned_last_update": "2019-06-10T09:40:00"<br>
+                                }<br>
+                            ]<br>
+                        }<br>
+                    ],<br>
+                    "limit_orders": [],<br>
+                    "call_orders": [],<br>
+                    "settle_orders": [],<br>
+                    "proposals": [],<br>
+                    "assets": [<br>
+                        "1.3.1"<br>
+                    ],<br>
+                    "withdraws": []<br>
+                }<br>
+            ]<br>
+        ]<br>
+    },<br>
+    "message": "操作成功"<br>
+}<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
