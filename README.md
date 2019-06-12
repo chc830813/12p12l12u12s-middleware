@@ -1,4 +1,4 @@
-# Plus-middleware[PlusChain](https://wallet.pltoken.io) 
+# Plus-middleware （[PlusChain])(https://wallet.pltoken.io) 
 
 使用Pluschain 中间件是平台接入最简单的方式。主要提供三方面的接口：查询，转账等，获得相应的 API，方便的与Pluschain链进行交互。
 
@@ -41,12 +41,12 @@ synced and subscribed, chainstore ready
 ```
 
 ## 接口说明
-请求文档及示例
-1. 基础查询相关接口
-1.1. 获取指定账户信息 getAccountDetails
- 请求类型：GET
- 请求参数：{String} account - 账号
- 请求示例：localhost:3002/plushapi/v2/getAccountDetails?account=plus123456789123 <br> 
+请求文档及示例<br>
+1. 基础查询相关接口<br>
+1.1. 获取指定账户信息 getAccountDetails<br>
+ 请求类型：GET<br>
+ 请求参数：{String} account - 账号<br>
+ 请求示例：http://127.0.0.1:3002/plushapi/v2/getAccountDetails?account=plus123456789123 <br> 
 
 返回结果：
 ```javaspcript
@@ -206,10 +206,10 @@ synced and subscribed, chainstore ready
     "message": "操作成功"
 }
 ```
-1.2. 获取指定账户信息 getAssetDetails
- 请求类型：GET
- 请求参数：{String} account - 账号
- 请求示例：localhost:3002/plushapi/v2/getAssetDetails?symbol=PLUS<br> 
+1.2. 获取指定资产信息 getAssetDetails<br>
+ 请求类型：GET<br>
+ 请求参数：{String} symbol - 资产名<br>
+ 请求示例：http://127.0.0.1:3002/plushapi/v2/getAssetDetails?symbol=PLUS<br> 
 
 返回结果：
 ```javaspcript
@@ -252,8 +252,77 @@ synced and subscribed, chainstore ready
     "message": "操作成功"
 }
 ```
-
-
+1.3. 获取指定账户的某资产的到账信息 history<br>
+ 请求类型：GET<br>
+ 请求参数：{String} toAccount - 账号<br>
+         {Int}    size - 条数<br>
+         {String} symbol - 资产名<br>
+ 请求示例：http://127.0.0.1:3002/plushapi/v2/history?toAccount=init2&size=1&symbol=CHK<br> 
+ 
+ 返回结果：
+```javaspcript
+{
+    "code": 0,
+    "data": [
+        {
+            "asset": "CHK",
+            "account": "init2",
+            "fromAddress": "1.2.20",
+            "confirmations": 0,
+            "category": "receive",
+            "amount": 2,
+            "blockhash": "420411",
+            "blocktime": 1560248448,
+            "nonce": 1234
+        },
+        {
+            "asset": "CHK",
+            "account": "init2",
+            "fromAddress": "1.2.20",
+            "confirmations": 0,
+            "category": "receive",
+            "amount": 2,
+            "blockhash": "419749",
+            "blocktime": 1560246426,
+            "nonce": 1234
+        },
+        {
+            "asset": "CHK",
+            "account": "init2",
+            "fromAddress": "1.2.20",
+            "confirmations": 0,
+            "category": "receive",
+            "amount": 2,
+            "blockhash": "419620",
+            "blocktime": 1560246039,
+            "nonce": 0
+        },
+        {
+            "asset": "CHK",
+            "account": "init2",
+            "fromAddress": "1.2.20",
+            "confirmations": 0,
+            "category": "receive",
+            "amount": 0.0002,
+            "blockhash": "418801",
+            "blocktime": 1560243537,
+            "nonce": 0
+        },
+        {
+            "asset": "CHK",
+            "account": "init2",
+            "fromAddress": "1.2.20",
+            "confirmations": 0,
+            "category": "receive",
+            "amount": 0.0002,
+            "blockhash": "418626",
+            "blocktime": 1560243012,
+            "nonce": 0
+        }
+    ],
+    "message": "操作成功"
+}
+```
 
 
 
