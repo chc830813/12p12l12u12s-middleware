@@ -1,21 +1,20 @@
-# PluschainJS (pluschainJS)
+# Plus-middleware[PlusChain](https://wallet.pltoken.io) 
 
 使用Pluschain 中间件是平台接入最简单的方式。主要提供三方面的接口：查询，转账等，获得相应的 API，方便的与Pluschain链进行交互。
 
 Pluschain中间件是通过node 的API接口与Pluschain网络通讯，为平台服务商提供方便的访问链上数据的接口，保证传统业务代码能在只做尽量少的改动情况下，也能达到上链的要求。具体如下：
 
-[PLUS](https://wallet.pltoken.io) 
 
 部署:
 ===
-clone 源码 git clone https://github.com/chc830813/plus-middleware.git
-修改中间件配置 参照配置文件说明()，修改文件plus-middleware/config.js
-安装中间件服务所需node库 进入 ~/plus-middleware/ 目录 npm install
+clone 源码 git clone https://github.com/chc830813/plus-middleware.git<br>
+修改中间件配置 参照配置文件说明()，修改文件plus-middleware/config.js<br>
+安装中间件服务所需node库 进入 ~/plus-middleware/ 目录 npm install<br>
 启动中间件服务 npm start
 
 启动:
 ===
-##配置文件说明
+## 配置文件说明
 配置文件的路径在代码路径下config.json 文件中，
 
 ```javaspcript
@@ -30,27 +29,24 @@ clone 源码 git clone https://github.com/chc830813/plus-middleware.git
     allow_ip: ["localhost", "127.0.0.1"]
 }
 ```
-##需要注意的是：
-    在一般使用场景中，中间件值需要使用资金私钥，否则不要将资金私钥写进配置文件。
-    中间件中使用了限制IP(allow_ip)来保证安全性，不过依然强烈建议内网部署，做好隔离，私钥的安全性较为重要。
-    操作手续费以PLUS支付手续费
-##启动正常看到如下信息：
+## 需要注意的是：
+ 在一般使用场景中，中间件值需要使用资金私钥，否则不要将资金私钥写进配置文件。
+ 中间件中使用了限制IP(allow_ip)来保证安全性，不过依然强烈建议内网部署，做好隔离，私钥的安全性较为重要。
+ 操作手续费以PLUS支付手续费
+## 启动正常看到如下信息：
+```javaspcript
 connected to: PLUS network
 synced and subscribed, chainstore ready
 启动监听端口 3002
+```
 
-接口说明
+## 接口说明
 请求文档及示例
 1. 基础查询相关接口
-1.1. 获取指定账户信息 getAccount
+1.1. 获取指定账户信息 getAccountDetails
  请求类型：GET
-
- 请求参数：
-
-{String} account - 账号
- 请求示例：
-
-localhost:3002/plushapi/v2/getAccountDetails?account=plus123456789123 <br> 
+ 请求参数：{String} account - 账号
+ 请求示例：localhost:3002/plushapi/v2/getAccountDetails?account=plus123456789123 <br> 
 
 返回结果：
 ```javaspcript
@@ -210,10 +206,52 @@ localhost:3002/plushapi/v2/getAccountDetails?account=plus123456789123 <br>
     "message": "操作成功"
 }
 ```
+1.2. 获取指定账户信息 getAssetDetails
+ 请求类型：GET
+ 请求参数：{String} account - 账号
+ 请求示例：localhost:3002/plushapi/v2/getAssetDetails?symbol=PLUS<br> 
 
-
-
-
+返回结果：
+```javaspcript
+{
+    "code": 0,
+    "data": {
+        "id": "1.3.0",
+        "precision": 8,
+        "data": {
+            "id": "1.3.0",
+            "symbol": "PLUS",
+            "precision": 8,
+            "issuer": "1.2.3",
+            "options": {
+                "flags": 0,
+                "market_fee_percent": 0,
+                "whitelist_authorities": [],
+                "max_supply": "1000000000000000000",
+                "extensions": [],
+                "blacklist_markets": [],
+                "core_exchange_rate": {
+                    "base": {
+                        "amount": 1,
+                        "asset_id": "1.3.0"
+                    },
+                    "quote": {
+                        "amount": 1,
+                        "asset_id": "1.3.0"
+                    }
+                },
+                "description": "",
+                "max_market_fee": "1000000000000000000",
+                "issuer_permissions": 0,
+                "blacklist_authorities": [],
+                "whitelist_markets": []
+            },
+            "dynamic_asset_data_id": "2.3.0"
+        }
+    },
+    "message": "操作成功"
+}
+```
 
 
 
