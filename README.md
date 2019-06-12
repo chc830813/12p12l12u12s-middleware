@@ -47,7 +47,7 @@ synced and subscribed, chainstore ready
 
  请求参数：
 
-{Number} uid - 账号id
+{String} account - 账号
  请求示例：
 
 localhost:3002/plushapi/v2/getAccountDetails?account=plus123456789123 <br> 
@@ -56,9 +56,9 @@ localhost:3002/plushapi/v2/getAccountDetails?account=plus123456789123 <br>
 {<br>
 >>>>"code": 0,<br> 
 >>>>"data": {<br> 
->>>>>>>>"data": [<br>
->>>>>>>>>>>>[ <br>
->>>>>>>>>>>>>>>>"plus123456789123",<br>
+>>>>>"data": [<br>
+>>>>>>>[ <br>
+>>>>>>>>>"plus123456789123",<br>
 >>>>>>>>>>>>>>>>{<br>
 >>>>>>>>>>>>>>>>>>>>"account": {<br>
 >>>>>>>>>>>>>>>>>>>>>>>>"id": "1.2.20",<br>
