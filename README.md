@@ -54,160 +54,160 @@ localhost:3002/plushapi/v2/getAccountDetails?account=plus123456789123 <br>
 
 返回结果：
 ```javaspcript
-{<br>
->"code": 0, 
->"data": { 
->>>"data": [
->>>>[
->>>>>"plus123456789123",
->>>>>>{
->>>>>>>"account": {
->>>>>>>"id": "1.2.20",
->>>>>>>"membership_expiration_date": "2106-02-07T06:28:15",
->>>>>>>"registrar": "1.2.20",
->>>>>>>"referrer": "1.2.20",
->>>>>>>"lifetime_referrer": "1.2.20",
->>>>>>>"network_fee_percentage": 2000,
->>>>>>>>>>>>>>>>>>>>>>>>"lifetime_referrer_fee_percentage": 8000,<br>
->>>>>>>>>>>>>>>>>>>>>>>>"referrer_rewards_percentage": 0,<br>
->>>>>>>>>>>>>>>>>>>>>>>>"name": "plus123456789123",<br>
->>>>>>>>>>>>>>>>>>>>>>>>"vm_type": "",<br>
->>>>>>>>>>>>>>>>>>>>>>>>"vm_version": "",<br>
->>>>>>>>>>>>>>>>>>>>>>>>"code": "",<br>
->>>>>>>>>>>>>>>>>>>>>>>>"code_version": "",<br>
->>>>>>>>>>>>>>>>>>>>>>>>"abi": {<br>
->>>>>>>>>>>>>>>>>>>>>>>>"version": "token::abi/1.0",<br>
->>>>>>>>>>>>>>>>>>>>>>>>"types": [],<br>
->>>>>>>>>>>>>>>>>>>>>>>>"structs": [],<br>
->>>>>>>>>>>>>>>>>>>>>>>>"actions": [],<br>
->>>>>>>>>>>>>>>>>>>>>>>>"tables": [],<br>
->>>>>>>>>>>>>>>>>>>>>>>>"error_messages": [],<br>
->>>>>>>>>>>>>>>>>>>>>>>>"abi_extensions": []<br>
->>>>>>>>>>>>>>>>>>>>},<br>
->>>>>>>>>>>>>>>>>>>>"owner": {<br>
->>>>>>>>>>>>>>>>>>>>>>>>"weight_threshold": 1,<br>
->>>>>>>>>>>>>>>>>>>>>>>>"account_auths": [],<br>
->>>>>>>>>>>>>>>>>>>>>>>>"key_auths": [<br>
->>>>>>>>>>>>>>>>>>>>>>>>>>>>[<br>
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"PLUS7rfpjAKubCt6WGG3BpkBYbjt1yjCjpZvE8RG7ZHi13gie44yTM",<br>
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>1<br>
->>>>>>>>>>>>>>>>>>>>>>>>>>>>]<br>
->>>>>>>>>>>>>>>>>>>>>>>>],<br>
->>>>>>>>>>>>>>>>>>>>"address_auths": []<br>
->>>>>>>>>>>>>>>>},<br>
->>>>>>>>>>>>>>>>"active": {<br>
->>>>>>>>>>>>>>>>>>>>"weight_threshold": 1,<br>
->>>>>>>>>>>>>>>>>>>>"account_auths": [],<br>
->>>>>>>>>>>>>>>>>>>>"key_auths": [<br>
->>>>>>>>>>>>>>>>>>>>>>>>[<br>
->>>>>>>>>>>>>>>>>>>>>>>>>>>>"PLUS86ZS7oh4h4Eca9UYdJiKMh4KpzyAJFAMd5pW1aympQ5HTAAGuA",<br>
->>>>>>>>>>>>>>>>>>>>>>>>>>>>1<br>
->>>>>>>>>>>>>>>>>>>>>>>>]<br>
->>>>>>>>>>>>>>>>>>>>],<br>
->>>>>>>>>>>>>>>>>>>>"address_auths": []<br>
->>>>>>>>>>>>>>>>},<br>
->>>>>>>>>>>>>>>>"options": {<br>
->>>>>>>>>>>>>>>>>>>>"memo_key": "PLUS86ZS7oh4h4Eca9UYdJiKMh4KpzyAJFAMd5pW1aympQ5HTAAGuA",<br>
->>>>>>>>>>>>>>>>>>>>"voting_account": "1.2.5",<br>
->>>>>>>>>>>>>>>>>>>>"num_witness": 0,<br>
->>>>>>>>>>>>>>>>>>>>"num_committee": 0,<br>
->>>>>>>>>>>>>>>>>>>>"votes": [],<br>
->>>>>>>>>>>>>>>>>>>>"extensions": []<br>
->>>>>>>>>>>>>>>>},<br>
->>>>>>>>>>>>>>>>"statistics": "2.6.20",<br>
->>>>>>>>>>>>>>>>"whitelisting_accounts": [],<br>
->>>>>>>>>>>>>>>>"blacklisting_accounts": [],<br>
->>>>>>>>>>>>>>>>"whitelisted_accounts": [],<br>
->>>>>>>>>>>>>>>>"blacklisted_accounts": [],<br>
->>>>>>>>>>>>>>>>"cashback_vb": "1.13.1",<br>
->>>>>>>>>>>>>>>>"owner_special_authority": [<br>
->>>>>>>>>>>>>>>>>>>>0,<br>
->>>>>>>>>>>>>>>>>>>>{}<br>
->>>>>>>>>>>>>>>>],<br>
->>>>>>>>>>>>>>>>"active_special_authority": [<br>
->>>>>>>>>>>>>>>>>>>>0,<br>
->>>>>>>>>>>>>>>>>>>>{}<br>
->>>>>>>>>>>>>>>>],<br>
->>>>>>>>>>>>>>>>"top_n_control_flags": 0<br>
-                    },<br>
-                    "statistics": {<br>
-                        "id": "2.6.20",<br>
-                        "owner": "1.2.20",<br>
-                        "most_recent_op": "2.9.43",<br>
-                        "total_ops": 19,<br>
-                        "removed_ops": 0,<br>
-                        "total_core_in_orders": 0,<br>
-                        "lifetime_fees_paid": 1061505855,<br>
-                        "pending_fees": 0,<br>
-                        "pending_vested_fees": 0<br>
-                    },<br>
-                    "registrar_name": "plus123456789123",<br>
-                    "referrer_name": "plus123456789123",<br>
-                    "lifetime_referrer_name": "plus123456789123",<br>
-                    "votes": [],<br>
-                    "cashback_balance": {<br>
-                        "id": "1.13.1",<br>
-                        "owner": "1.2.20",<br>
-                        "balance": {<br>
-                            "amount": 565610938,<br>
-                            "asset_id": "1.3.0"<br>
-                        },<br>
-                        "policy": [<br>
-                            1,<br>
-                            {<br>
-                                "vesting_seconds": 1800,<br>
-                                "start_claim": "1970-01-01T00:00:00",<br>
-                                "coin_seconds_earned": "1018099688400",<br>
-                                "coin_seconds_earned_last_update": "2019-06-10T09:40:00"<br>
-                            }<br>
-                        ]<br>
-                    },<br>
-                    "balances": [<br>
-                        {<br>
-                            "id": "2.5.2",<br>
-                            "owner": "1.2.20",<br>
-                            "asset_type": "1.3.0",<br>
-                            "balance": "9998906494145"<br>
-                        },<br>
-                        {<br>
-                            "id": "2.5.3",<br>
-                            "owner": "1.2.20",<br>
-                            "asset_type": "1.3.1",<br>
-                            "balance": 9638192<br>
-                        }<br>
-                    ],<br>
-                    "vesting_balances": [<br>
-                        {<br>
-                            "id": "1.13.1",<br>
-                            "owner": "1.2.20",<br>
-                            "balance": {<br>
-                                "amount": 565610938,<br>
-                                "asset_id": "1.3.0"<br>
-                            },<br>
-                            "policy": [<br>
-                                1,<br>
-                                {<br>
-                                    "vesting_seconds": 1800,<br>
-                                    "start_claim": "1970-01-01T00:00:00",<br>
-                                    "coin_seconds_earned": "1018099688400",<br>
-                                    "coin_seconds_earned_last_update": "2019-06-10T09:40:00"<br>
-                                }<br>
-                            ]<br>
-                        }<br>
-                    ],<br>
-                    "limit_orders": [],<br>
-                    "call_orders": [],<br>
-                    "settle_orders": [],<br>
-                    "proposals": [],<br>
-                    "assets": [<br>
-                        "1.3.1"<br>
-                    ],<br>
-                    "withdraws": []<br>
-                }<br>
-            ]<br>
-        ]<br>
-    },<br>
-    "message": "操作成功"<br>
+{
+    "code": 0,
+    "data": {
+        "data": [
+            [
+                "plus123456789123",
+                {
+                    "account": {
+                        "id": "1.2.20",
+                        "membership_expiration_date": "2106-02-07T06:28:15",
+                        "registrar": "1.2.20",
+                        "referrer": "1.2.20",
+                        "lifetime_referrer": "1.2.20",
+                        "network_fee_percentage": 2000,
+                        "lifetime_referrer_fee_percentage": 8000,
+                        "referrer_rewards_percentage": 0,
+                        "name": "plus123456789123",
+                        "vm_type": "",
+                        "vm_version": "",
+                        "code": "",
+                        "code_version": "",
+                        "abi": {
+                            "version": "token::abi/1.0",
+                            "types": [],
+                            "structs": [],
+                            "actions": [],
+                            "tables": [],
+                            "error_messages": [],
+                            "abi_extensions": []
+                        },
+                        "owner": {
+                            "weight_threshold": 1,
+                            "account_auths": [],
+                            "key_auths": [
+                                [
+                                    "PLUS7rfpjAKubCt6WGG3BpkBYbjt1yjCjpZvE8RG7ZHi13gie44yTM",
+                                    1
+                                ]
+                            ],
+                            "address_auths": []
+                        },
+                        "active": {
+                            "weight_threshold": 1,
+                            "account_auths": [],
+                            "key_auths": [
+                                [
+                                    "PLUS86ZS7oh4h4Eca9UYdJiKMh4KpzyAJFAMd5pW1aympQ5HTAAGuA",
+                                    1
+                                ]
+                            ],
+                            "address_auths": []
+                        },
+                        "options": {
+                            "memo_key": "PLUS86ZS7oh4h4Eca9UYdJiKMh4KpzyAJFAMd5pW1aympQ5HTAAGuA",
+                            "voting_account": "1.2.5",
+                            "num_witness": 0,
+                            "num_committee": 0,
+                            "votes": [],
+                            "extensions": []
+                        },
+                        "statistics": "2.6.20",
+                        "whitelisting_accounts": [],
+                        "blacklisting_accounts": [],
+                        "whitelisted_accounts": [],
+                        "blacklisted_accounts": [],
+                        "cashback_vb": "1.13.1",
+                        "owner_special_authority": [
+                            0,
+                            {}
+                        ],
+                        "active_special_authority": [
+                            0,
+                            {}
+                        ],
+                        "top_n_control_flags": 0
+                    },
+                    "statistics": {
+                        "id": "2.6.20",
+                        "owner": "1.2.20",
+                        "most_recent_op": "2.9.43",
+                        "total_ops": 19,
+                        "removed_ops": 0,
+                        "total_core_in_orders": 0,
+                        "lifetime_fees_paid": 1061505855,
+                        "pending_fees": 0,
+                        "pending_vested_fees": 0
+                    },
+                    "registrar_name": "plus123456789123",
+                    "referrer_name": "plus123456789123",
+                    "lifetime_referrer_name": "plus123456789123",
+                    "votes": [],
+                    "cashback_balance": {
+                        "id": "1.13.1",
+                        "owner": "1.2.20",
+                        "balance": {
+                            "amount": 565610938,
+                            "asset_id": "1.3.0"
+                        },
+                        "policy": [
+                            1,
+                            {
+                                "vesting_seconds": 1800,
+                                "start_claim": "1970-01-01T00:00:00",
+                                "coin_seconds_earned": "1018099688400",
+                                "coin_seconds_earned_last_update": "2019-06-10T09:40:00"
+                            }
+                        ]
+                    },
+                    "balances": [
+                        {
+                            "id": "2.5.2",
+                            "owner": "1.2.20",
+                            "asset_type": "1.3.0",
+                            "balance": "9998906494145"
+                        },
+                        {
+                            "id": "2.5.3",
+                            "owner": "1.2.20",
+                            "asset_type": "1.3.1",
+                            "balance": 9638192
+                        }
+                    ],
+                    "vesting_balances": [
+                        {
+                            "id": "1.13.1",
+                            "owner": "1.2.20",
+                            "balance": {
+                                "amount": 565610938,
+                                "asset_id": "1.3.0"
+                            },
+                            "policy": [
+                                1,
+                                {
+                                    "vesting_seconds": 1800,
+                                    "start_claim": "1970-01-01T00:00:00",
+                                    "coin_seconds_earned": "1018099688400",
+                                    "coin_seconds_earned_last_update": "2019-06-10T09:40:00"
+                                }
+                            ]
+                        }
+                    ],
+                    "limit_orders": [],
+                    "call_orders": [],
+                    "settle_orders": [],
+                    "proposals": [],
+                    "assets": [
+                        "1.3.1"
+                    ],
+                    "withdraws": []
+                }
+            ]
+        ]
+    },
+    "message": "操作成功"
 }
 ```
 
