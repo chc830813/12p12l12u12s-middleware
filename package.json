@@ -20,7 +20,7 @@
     "deep-equal": "^1.0.1",
     "ecurve": "^1.0.6",
     "event-emitter": "^0.3.5",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "immutable": "^4.0.0-rc.12",
     "pluschainjs-ws": "git+https://github.com/chc830813/plus-ws.git",
     "secure-random": "^1.1.2"
